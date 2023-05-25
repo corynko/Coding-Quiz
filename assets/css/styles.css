@@ -1,0 +1,17 @@
+:root {
+  --darkest: #292929;
+  --darker: #1c3f5e;
+  --medium: #8d97b9;
+  --lighter: #cbe2cd;
+  --lightest: #f2f2f2;
+}
+
+.custom-bg-darkest {
+  background-color: var(--darkest);
+  color: var(--lightest);
+}
+
+.custom-bg-darkest:hover {
+  background-color: var(--darker);
+  color: var(--lighter);
+}
