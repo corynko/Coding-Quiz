@@ -13,40 +13,68 @@
     />
     <title>Coding Quiz!</title>
   </head>
-  <body>
+  <body class="body">
     <main>
       <section class="container">
-        <h4 class="w-25" id="timer-count"></h4>
-        <h1 class="w-66 text-center" id="question">
+        <div class="row my-4">
+          <h4 class="col w-33 custom-hs" id="view-hs">
+            <a href="./highscores.html">View High Scores</a>
+          </h4>
+          <div class="col w-33"></div>
+          <h4 class="col w-33" id="timer-count"></h4>
+        </div>
+      </section>
+      <section>
+        <h1 class="w-66 my-5 py-3 text-center custom-h1" id="question">
           How Well Do You Know Your Code?
         </h1>
-        <h2 class="w-100 text-center" id="instructions">
-          Test your coding knowledge with this quiz coded entirely from scratch!
+        <h2 class="w-100 text-center my-3" id="instructions">
+          Test your coding knowledge with this quiz coded entirely from
+          scratch!<span id="lineBreak"></span>
           Set the highest score and show off to your friends!
         </h2>
-        <div id="options">
+        <div class="d-grid gap-4 col-6 mx-auto" id="options">
           <button
-            class="btn btn-primary custom-bg-darkest"
+            class="btn-lg custom-bg-darkest rounded-pill"
             id="option1"
           ></button>
           <button
-            class="btn btn-primary custom-bg-darkest"
+            class="btn-lg custom-bg-darkest rounded-pill"
             id="option2"
           ></button>
           <button
-            class="btn btn-primary custom-bg-darkest"
+            class="btn-lg custom-bg-darkest rounded-pill"
             id="option3"
           ></button>
           <button
-            class="btn btn-primary custom-bg-darkest"
+            class="btn-lg custom-bg-darkest rounded-pill"
             id="option4"
           ></button>
         </div>
-        <button class="btn btn-primary custom-bg-darkest" id="start-button">
-          Start the Quiz!
-        </button>
-        <div class="separation"></div>
-        <h3 id="results"></h3>
+        <div class="text-center">
+          <button
+            class="btn-lg custom-bg-darkest rounded-pill"
+            id="start-button"
+          >
+            Start the Quiz!
+          </button>
+        </div>
+      </section>
+      <section>
+        <div class="text-center" id="submit-form">
+          <label for="high-score-name" class="form-label fs-2"
+            >Your Name:</label
+          >
+          <input type="textarea" id="hs-name" class="form-control-lg" />
+          <button
+            class="btn-lg custom-bg-darkest rounded-pill"
+            id="submit-button"
+          >
+            Submit Your Score!
+          </button>
+        </div>
+        <div class="separation my-4" id="separation"></div>
+        <h3 class="text-center pt-4" id="result"></h3>
       </section>
     </main>
   </body>

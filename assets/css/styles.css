@@ -6,12 +6,34 @@
   --lightest: #f2f2f2;
 }
 
-.custom-bg-darkest {
+.body {
   background-color: var(--darkest);
   color: var(--lightest);
 }
 
+.custom-bg-darkest {
+  background-color: var(--lighter);
+  color: var(--darkest);
+}
+
 .custom-bg-darkest:hover {
-  background-color: var(--darker);
+  background-color: var(--medium);
+  color: var(--darkest);
+}
+
+.custom-h1 {
+  font-weight: bold;
+}
+
+.custom-hs a {
+  color: var(--medium);
+  text-decoration: none;
+}
+
+.custom-hs:hover a {
   color: var(--lighter);
+}
+
+.separation {
+  border-top: solid 3px #8d97b9;
 }
