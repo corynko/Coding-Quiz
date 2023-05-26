@@ -18,7 +18,6 @@ var submitForm = $("#submit-form");
 var submitButton = $("#submit-button");
 var separation = $("#separation");
 var highScoreList = [];
-var results = {};
 // var hsName = document.getElementById("hs-name").value;
 
 //question function array
@@ -156,38 +155,39 @@ function showHighScores() {
   console.log("I've been clicked!");
 }
 
-// function storeScore() {
-//   //   hsName = $("input").val();
-//   results = { name: "hsName", score: "score" };
-//   highScoreList.push(results);
-//   highScoreList.sort(function (a, b) {
-//     return b.score - a.score;
-//   });
-//   localStorage.setItem("High Scores", highScoreList);
+function storeScore() {
+  hsName = $("input").val();
+  results = { name: hsName, score: score };
+  var previousScore = window.localStorage.getItem("High Scores");
+  if (previousScore == null) {
+    highScoreList.push(JSON.stringify(results));
+    window.localStorage.setItem("High Scores", highScoreList);
+  } else {
+    console.log(previousScore);
+    highScoreList.push(previousScore);
+    highScoreList.push(JSON.stringify(results));
+    window.localStorage.setItem("High Scores", highScoreList);
+  }
 
-//   //   $("#score1").text(
-//   //     highscoreList[0].player + " - score: " + highscoreList[0].score
-//   //   );
-// }
+  //   highScoreList.sort(function (a, b) {
+  //     return b.score - a.score;
+  //   });
+  //   window.localStorage.setItem("High Scores", highScoreList);
+
+  //   $("#score1").text(
+  //     highscoreList[0].player + " - score: " + highscoreList[0].score
+  //   );
+}
 
 //event listeners
 startButton.on("click", handleStartQuiz);
 startButton.on("click", displayTimer);
 highScores.on("click", showHighScores);
-// submitButton.on("click", storeScore);
+submitButton.on("click", storeScore);
 optionsEl.on("click", ".btn-lg", function (e) {
   selected = e.target.id;
   answerResult();
 });
-// optionsEl.children().onclick = function () {
-//   selected = this.id;
-// });
 
 //todo:
-//figure out listener for each option
-//compare option clicked to right answer
-//display result
-//move to next question
-//increment score on correct answer
-//make view high score element
 //save high score to local memory
