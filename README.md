@@ -6,7 +6,7 @@ A simple, timed quiz on various coding fundamentals.
 
 ## Where Is It?
 
-You can take the quiz at [corynko.github.io/Coding-Quiz/](corynko.github.io/Coding-Quiz/).
+You can take the quiz at [corynko.github.io/Coding-Quiz/](https://corynko.github.io/Coding-Quiz/).
 
 ## How Do I Use It?
 
