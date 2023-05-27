@@ -2,11 +2,11 @@
 
 ## What Is It?
 
-A simple, timed quiz on various coding fundamentals
+A simple, timed quiz on various coding fundamentals.
 
 ## Where Is It?
 
-You can take the quiz at [corynko.github.io/Coding-Quiz](corynko.github.io/Coding-Quiz)
+You can take the quiz at [corynko.github.io/Coding-Quiz/](https://corynko.github.io/Coding-Quiz/).
 
 ## How Do I Use It?
 
@@ -18,3 +18,7 @@ Simply click on "Start the Quiz" to start the quiz. For each question, take your
 ## Who Can Use It?
 
 Anyone can feel free to take the quiz, or modify the code to make their own.
+
+## What's Wrong With It?
+
+High scores are currently a little bit broken. Fixed in the next update.
