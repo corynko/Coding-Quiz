@@ -165,7 +165,7 @@ function storeScore() {
     highScoreList.push(results);
   }
   window.localStorage.setItem("High Scores", JSON.stringify(highScoreList));
-  window.location.href = "./highscores.html";
+  window.location.href = "/Coding-Quiz/highscores.html";
 }
 
 //event listeners
