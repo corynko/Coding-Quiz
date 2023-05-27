@@ -171,7 +171,6 @@ function storeScore() {
 //event listeners
 startButton.on("click", handleStartQuiz);
 startButton.on("click", displayTimer);
-highScores.on("click", showHighScores);
 submitButton.on("click", storeScore);
 optionsEl.on("click", ".btn-lg", function (e) {
   selected = e.target.id;
