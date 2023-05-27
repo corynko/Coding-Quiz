@@ -18,7 +18,6 @@ var submitForm = $("#submit-form");
 var submitButton = $("#submit-button");
 var separation = $("#separation");
 var highScoreList = [];
-// var hsName = document.getElementById("hs-name").value;
 
 //question function array
 var questions = [
@@ -111,6 +110,7 @@ function displayTimer() {
   }, 1000);
 }
 
+//start quiz, on button click
 function handleStartQuiz() {
   // console.log("Started the Quiz!")
   startButton.hide();
@@ -119,6 +119,7 @@ function handleStartQuiz() {
   questions[indexTracker]();
 }
 
+//end quiz when out of time or questions
 function handleQuizEnd() {
   questionEl.text("Finished!");
   instructionsEl.text("Your Score is " + score);
@@ -151,32 +152,20 @@ function answerResult() {
   }
 }
 
-function showHighScores() {
-  console.log("I've been clicked!");
-}
-
+//pull previous scores from local memory (if any), and store new one, then load HS page
 function storeScore() {
   hsName = $("input").val();
   results = { name: hsName, score: score };
   var previousScore = window.localStorage.getItem("High Scores");
   if (previousScore == null) {
-    highScoreList.push(JSON.stringify(results));
-    window.localStorage.setItem("High Scores", highScoreList);
+    highScoreList.push(results);
   } else {
-    console.log(previousScore);
-    highScoreList.push(previousScore);
-    highScoreList.push(JSON.stringify(results));
-    window.localStorage.setItem("High Scores", highScoreList);
+    // console.log(previousScore);
+    highScoreList = JSON.parse(previousScore);
+    highScoreList.push(results);
   }
-
-  //   highScoreList.sort(function (a, b) {
-  //     return b.score - a.score;
-  //   });
-  //   window.localStorage.setItem("High Scores", highScoreList);
-
-  //   $("#score1").text(
-  //     highscoreList[0].player + " - score: " + highscoreList[0].score
-  //   );
+  window.localStorage.setItem("High Scores", JSON.stringify(highScoreList));
+  window.location.href = "./highscores.html";
 }
 
 //event listeners
@@ -188,6 +177,3 @@ optionsEl.on("click", ".btn-lg", function (e) {
   selected = e.target.id;
   answerResult();
 });
-
-//todo:
-//save high score to local memory

@@ -1,13 +1,19 @@
-var highScores = [window.localStorage.getItem("High Scores")];
+var highScores = JSON.parse(window.localStorage.getItem("High Scores"));
 var listEl = $("#listEl");
-// var parsed = JSON.parse(highScores);
-var scores = [highScores[1], highScores[2], highScores[3]];
 
-scores.sort((a, b) => b.score - a.score);
+//sort scores
+highScores.sort((a, b) => b.score - a.score);
 renderHighScores();
 
+//create li's for scores
 function renderHighScores() {
-  for (var i = 0; i < scores.length; i++) {
-    listEl.append("<li>" + scores[i] + "</li>");
+  for (var i = 0; i < highScores.length; i++) {
+    listEl.append(
+      "<li>" +
+        highScores[i].name +
+        " ----- Score: " +
+        highScores[i].score +
+        "</li>"
+    );
   }
 }
