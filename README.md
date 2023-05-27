@@ -18,7 +18,3 @@ Simply click on "Start the Quiz" to start the quiz. For each question, take your
 ## Who Can Use It?
 
 Anyone can feel free to take the quiz, or modify the code to make their own.
-
-## What's Wrong With It?
-
-High scores are currently a little bit broken. Fixed in the next update.
